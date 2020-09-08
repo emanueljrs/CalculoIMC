@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,24 +19,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btCalcular = findViewById<Button>(R.id.buttonCalcular)
-        btCalcular.setOnClickListener { calcularIMC()
-            Snackbar.make(it, "Teste", Snackbar.LENGTH_LONG).show()
-        }
+        btCalcular.setOnClickListener { calcularIMC() }
     }
 
     private fun calcularIMC() {
-        val edtPeso = findViewById<EditText>(R.id.editTextPeso)
-        val edtAltura = findViewById<EditText>(R.id.editTextAltura)
 
-        if (edtPeso.text.toString() == "" && edtAltura.text.toString() == "") {
-            toast("Preencha os campos!")
-        } else if (edtPeso.text.toString() == "") {
-            toast("Preencha o campo Peso!")
-        } else if (edtAltura.text.toString() == "") {
-            toast("Preencha o campo Altura!")
-        } else {
-            val peso = edtPeso.text.toString().toFloat()
-            val altura = edtAltura.text.toString().toFloat()
+        if (verificarCampos()) {
+            val peso = editTextPeso.text.toString().toFloat()
+            val altura = editTextAltura.text.toString().toFloat()
 
             imc = peso / (altura * altura)
 
@@ -43,6 +34,27 @@ class MainActivity : AppCompatActivity() {
             chamarActivity()
         }
 
+    }
+
+    private fun verificarCampos(): Boolean {
+
+        val edtPeso = findViewById<EditText>(R.id.editTextPeso)
+        val edtAltura = findViewById<EditText>(R.id.editTextAltura)
+
+        if (edtPeso.text.toString() == "" && edtAltura.text.toString() == "") {
+            toast("Preencha os campos!")
+            return false
+        } else if (edtPeso.text.toString() == "" && edtAltura.text.toString() == "0") {
+            toast("Preencha o campo Peso e Altura não pode ser 0.")
+            return false
+        } else if (edtAltura.text.toString() == "" && edtPeso.text.toString() == "0") {
+            toast("Preencha o campo Altura e o Peso não pode ser 0.")
+            return false
+        } else if (edtPeso.text.toString() == "0" && edtAltura.text.toString() == "0") {
+            toast("Peso e Altura não podem ser 0.")
+            return false
+        }
+        return true
     }
 
     private fun chamarActivity() {
