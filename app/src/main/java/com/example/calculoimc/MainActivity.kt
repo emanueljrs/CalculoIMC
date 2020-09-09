@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //Calcula o IMC com os valores digitados nos editTexts
     private fun calcularIMC() {
 
         if (verificarCampos()) {
@@ -49,11 +50,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //Verifica a integridade dos campos para fazer o cálculo
     private fun verificarCampos(): Boolean {
 
         val edtPeso = findViewById<EditText>(R.id.editTextPeso)
         val edtAltura = findViewById<EditText>(R.id.editTextAltura)
-
 
         if (edtPeso.text.toString() == "" || edtPeso.text.toString() == "0") {
             peso_layout.error = getString(R.string.preencher_campos)
@@ -78,6 +79,7 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    //Chama a outra activity e mostra o resultado do IMC e sua faixa de peso
     private fun chamarActivity() {
         val tela2 = Intent(this, Main2Activity::class.java)
         tela2.putExtra("imc", imc)
@@ -85,6 +87,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(tela2)
     }
 
+    //Verifica qual faixa o IMC calculado se encontra
     private fun verifcarIMC() {
         if (imc <= 17) {
             faixa = "Muito abaixo do peso."
