@@ -21,14 +21,14 @@ class MainActivity : AppCompatActivity() {
         btCalcular.setOnClickListener { calcularIMC() }
 
         editTextPeso.setOnKeyListener { _, _, _ ->
-            if (verificarCampos()) {
+            if (editTextPeso.text.toString() == "") {
                 peso_layout.error = null
             }
             false
         }
 
         editTextAltura.setOnKeyListener { _, _, _ ->
-            if (verificarCampos()) {
+            if (editTextAltura.text.toString() == "") {
                 altura_layout.error = null
             }
             false
