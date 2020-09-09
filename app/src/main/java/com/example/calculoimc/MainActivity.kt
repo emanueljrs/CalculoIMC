@@ -102,8 +102,4 @@ class MainActivity : AppCompatActivity() {
             faixa = "Obesidade III Mórbida."
         }
     }
-
-    private fun toast(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
-    }
 }
