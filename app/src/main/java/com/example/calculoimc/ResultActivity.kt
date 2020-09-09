@@ -2,23 +2,23 @@ package com.example.calculoimc
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main2.*
+import kotlinx.android.synthetic.main.activity_result.*
 
-class Main2Activity : AppCompatActivity() {
+class ResultActivity : AppCompatActivity() {
 
     var imc = 0.0f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_result)
 
-        val tela1 = intent
-        imc = tela1.getFloatExtra("imc", 0.0f)
-        val faixa = tela1.getStringExtra("faixa")
+        val main_activity = intent
+        imc = main_activity.getFloatExtra("imc", 0.0f)
+        val faixa = main_activity.getStringExtra("faixa")
 
         mudarImagem()
-        textViewImc.setText("Seu IMC é: %.2f".format(imc))
-        textViewFaixa.setText(faixa)
+        textViewImc.text = "Seu IMC é: %.2f".format(imc)
+        textViewFaixa.text = faixa
     }
 
     private fun mudarImagem() {

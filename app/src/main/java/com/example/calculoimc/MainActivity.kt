@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -81,10 +80,10 @@ class MainActivity : AppCompatActivity() {
 
     //Chama a outra activity e mostra o resultado do IMC e sua faixa de peso
     private fun chamarActivity() {
-        val tela2 = Intent(this, Main2Activity::class.java)
-        tela2.putExtra("imc", imc)
-        tela2.putExtra("faixa", faixa)
-        startActivity(tela2)
+        val result_activity = Intent(this, ResultActivity::class.java)
+        result_activity.putExtra("imc", imc)
+        result_activity.putExtra("faixa", faixa)
+        startActivity(result_activity)
     }
 
     //Verifica qual faixa o IMC calculado se encontra
