@@ -23,11 +23,11 @@ class ResultActivity : AppCompatActivity() {
 
     private fun mudarImagem() {
         if (imc <= 18.49) {
-            imageViewResultado.setImageResource(R.drawable.excla)
+            imageViewResultado.setImageResource(R.drawable.advertencia)
         } else if (imc > 18.49 && imc <= 24.99) {
-            imageViewResultado.setImageResource(R.drawable.ok1)
+            imageViewResultado.setImageResource(R.drawable.normal)
         } else if (imc > 24.99) {
-            imageViewResultado.setImageResource(R.drawable.x1)
+            imageViewResultado.setImageResource(R.drawable.alerta)
         }
     }
 }

@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btCalcular = findViewById<Button>(R.id.buttonCalcular)
+        val btCalcular = buttonCalcular
         btCalcular.setOnClickListener { calcularIMC() }
 
         editTextPeso.setOnKeyListener { _, _, _ ->
@@ -33,6 +33,14 @@ class MainActivity : AppCompatActivity() {
             false
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        editTextPeso.text?.clear()
+        editTextPeso.requestFocus()
+        editTextAltura.text?.clear()
+    }
+
 
     //Calcula o IMC com os valores digitados nos editTexts
     private fun calcularIMC() {
