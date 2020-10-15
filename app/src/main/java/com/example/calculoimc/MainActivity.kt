@@ -97,19 +97,19 @@ class MainActivity : AppCompatActivity() {
     //Verifica qual faixa o IMC calculado se encontra
     private fun verifcarIMC() {
         if (imc <= 17) {
-            faixa = "Muito abaixo do peso."
+            faixa = getString(R.string.muito_abaixo)
         } else if (imc > 17 && imc <= 18.49) {
-            faixa = "Abaixo do peso."
+            faixa = getString(R.string.abaixo)
         } else if (imc > 18.49 && imc <= 24.99) {
-            faixa = "Peso normal."
+            faixa = getString(R.string.normal)
         } else if (imc > 24.99 && imc <= 29.99) {
-            faixa = "Acima do peso."
+            faixa = getString(R.string.acima)
         } else if (imc > 29.99 && imc <= 34.99) {
-            faixa = "Obesidade I."
+            faixa = getString(R.string.obesidade_1)
         } else if (imc > 34.99 && imc <= 39.99) {
-            faixa = "Obesidade II Severa."
+            faixa = getString(R.string.obesidade_2)
         } else if (imc > 39.99) {
-            faixa = "Obesidade III Mórbida."
+            faixa = getString(R.string.obesidade_3)
         }
     }
 }

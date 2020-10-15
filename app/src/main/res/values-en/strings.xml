@@ -6,4 +6,12 @@
     <string name="hint_editText_altura">Height</string>
     <string name="text_button_calcular">Calculate IMC</string>
     <string name="preencher_campos">Field cannot be empty or zero.</string>
+    <string name="muito_abaixo">Very underweight.</string>
+    <string name="abaixo">Under weight.</string>
+    <string name="normal">Normal weight.</string>
+    <string name="acima">Overweight.</string>
+    <string name="obesidade_1">Obesity 1.</string>
+    <string name="obesidade_2">Obesity 2 - Severe.</string>
+    <string name="obesidade_3">Obesity 3 - Morbid.</string>
+    <string name="resultado_imc">Your IMC is: </string>
 </resources>

@@ -5,4 +5,13 @@
     <string name="hint_editText_altura">Altura</string>
     <string name="text_button_calcular">Calcular IMC</string>
     <string name="preencher_campos">Não pode ser vazio e nem zero.</string>
+    <string name="muito_abaixo">Muito abaixo do peso.</string>
+    <string name="abaixo">Abaixo do peso.</string>
+    <string name="normal">Peso normal.</string>
+    <string name="acima">Acima do peso.</string>
+    <string name="obesidade_1">Obesidade 1.</string>
+    <string name="obesidade_2">Obesidade 2 - Severa.</string>
+    <string name="obesidade_3">Obesidade 3 - Mórbida.</string>
+    <string name="resultado_imc">Seu IMC é: </string>
+
 </resources>

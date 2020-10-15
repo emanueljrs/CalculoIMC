@@ -17,7 +17,8 @@ class ResultActivity : AppCompatActivity() {
         val faixa = main_activity.getStringExtra("faixa")
 
         mudarImagem()
-        textViewImc.text = "Seu IMC é: %.2f".format(imc)
+        val resultado = getString(R.string.resultado_imc)
+        textViewImc.text = "$resultado %.2f".format(imc)
         textViewFaixa.text = faixa
     }
 
