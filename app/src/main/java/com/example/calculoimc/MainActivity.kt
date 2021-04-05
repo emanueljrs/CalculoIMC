@@ -16,8 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btCalcular = buttonCalcular
-        btCalcular.setOnClickListener { calcularIMC() }
+        buttonCalcular.setOnClickListener { calcularIMC() }
 
         editTextPeso.setOnKeyListener { _, _, _ ->
             if (editTextPeso.text.toString() == "") {
@@ -33,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             false
         }
     }
+
 
     override fun onResume() {
         super.onResume()
@@ -60,24 +60,25 @@ class MainActivity : AppCompatActivity() {
     //Verifica a integridade dos campos para fazer o cálculo
     private fun verificarCampos(): Boolean {
 
-        val edtPeso = findViewById<EditText>(R.id.editTextPeso)
-        val edtAltura = findViewById<EditText>(R.id.editTextAltura)
+        val edtPeso = editTextPeso
+        val edtAltura = editTextAltura
+        val msgError = getString(R.string.preencher_campos)
 
         if (edtPeso.text.toString() == "" || edtPeso.text.toString() == "0") {
-            peso_layout.error = getString(R.string.preencher_campos)
+            peso_layout.error = msgError
             altura_layout.error = null
             return false
         }
 
         if (edtAltura.text.toString() == "" || edtAltura.text.toString() == "0") {
-            altura_layout.error = getString(R.string.preencher_campos)
+            altura_layout.error = msgError
             peso_layout.error = null
             return false
         }
 
         if (edtPeso.text.toString() == "" || edtAltura.text.toString() == "") {
-            altura_layout.error = getString(R.string.preencher_campos)
-            peso_layout.error = getString(R.string.preencher_campos)
+            altura_layout.error = msgError
+            peso_layout.error = msgError
             return false
         }
 
@@ -96,20 +97,30 @@ class MainActivity : AppCompatActivity() {
 
     //Verifica qual faixa o IMC calculado se encontra
     private fun verifcarIMC() {
+
+        val strFaixas = listOf(
+            getString(R.string.muito_abaixo),
+            getString(R.string.abaixo),
+            getString(R.string.normal),
+            getString(R.string.acima),
+            getString(R.string.obesidade_1),
+            getString(R.string.obesidade_2),
+            getString(R.string.obesidade_3))
+
         if (imc <= 17) {
-            faixa = getString(R.string.muito_abaixo)
+            faixa = strFaixas[0]
         } else if (imc > 17 && imc <= 18.49) {
-            faixa = getString(R.string.abaixo)
+            faixa = strFaixas[1]
         } else if (imc > 18.49 && imc <= 24.99) {
-            faixa = getString(R.string.normal)
+            faixa = strFaixas[2]
         } else if (imc > 24.99 && imc <= 29.99) {
-            faixa = getString(R.string.acima)
+            faixa = strFaixas[3]
         } else if (imc > 29.99 && imc <= 34.99) {
-            faixa = getString(R.string.obesidade_1)
+            faixa = strFaixas[4]
         } else if (imc > 34.99 && imc <= 39.99) {
-            faixa = getString(R.string.obesidade_2)
+            faixa = strFaixas[5]
         } else if (imc > 39.99) {
-            faixa = getString(R.string.obesidade_3)
+            faixa = strFaixas[6]
         }
     }
 }
