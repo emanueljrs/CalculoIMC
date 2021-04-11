@@ -30,13 +30,26 @@
         android:textColor="#4F0E79"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewImc"
         app:layout_constraintVertical_bias="0.207"
         tools:text="Faixa" />
+
+    <TextView
+        android:id="@+id/textViewFaixaPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/grandstander_sem_bold"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textViewFaixa"
+        app:layout_constraintStart_toStartOf="@id/textViewFaixa"
+        app:layout_constraintEnd_toEndOf="@id/textViewFaixa"
+        tools:text="Faixa Peso Ideal"/>
 
     <ImageView
         android:id="@+id/imgTable"

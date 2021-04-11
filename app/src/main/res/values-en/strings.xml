@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">IMC Calculation</string>
     <string name="main_text_calculo_imc">IMC Calculation</string>
-    <string name="hint_editText_peso">Weight Ex: 65.2</string>
-    <string name="hint_editText_altura">Height Ex: 1.72</string>
+    <string name="hint_editText_peso">Weight(KG) - Ex: 65.2</string>
+    <string name="hint_editText_altura">Height(M) - Ex: 1.72</string>
     <string name="text_button_calcular">Calculate IMC</string>
     <string name="preencher_campos">Field cannot be empty or zero.</string>
     <string name="muito_abaixo">Very underweight.</string>

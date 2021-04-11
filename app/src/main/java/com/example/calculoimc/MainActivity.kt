@@ -3,6 +3,7 @@ package com.example.calculoimc
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_main.*
@@ -11,6 +12,7 @@ class MainActivity : AppCompatActivity() {
 
     private var imc = 0.0f
     private lateinit var faixa: String
+    private lateinit var faixaPesoIdeal: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,8 +53,24 @@ class MainActivity : AppCompatActivity() {
 
             imc = peso / (altura * altura)
 
+            faixaPesoIdeal = faixaPeso(altura)
+            Log.i("Teste", "Faxa Peso: $faixaPesoIdeal altura: $altura")
             verifcarIMC()
             chamarActivity()
+        }
+
+    }
+
+    private fun faixaPeso(altura: Float): String {
+
+        return when(altura) {
+            in 1.50..1.54 -> "45.5kg - 59.1kg"
+            in 1.54..1.60 -> "47.7kg - 63.6kg"
+            in 1.60..1.64 -> "50.1kg - 65.9kg"
+            in 1.64..1.70 -> "52.3kg - 68.2kg"
+            in 1.70..1.74 -> "54.5kg - 70.5kg"
+            in 1.74..1.80 -> "56.8kg - 79.5kg"
+            else -> "-"
         }
 
     }
@@ -92,6 +110,7 @@ class MainActivity : AppCompatActivity() {
         val result_activity = Intent(this, ResultActivity::class.java)
         result_activity.putExtra("imc", imc)
         result_activity.putExtra("faixa", faixa)
+        result_activity.putExtra("faixaPeso", faixaPesoIdeal)
         startActivity(result_activity)
     }
 

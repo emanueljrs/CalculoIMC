@@ -15,10 +15,12 @@ class ResultActivity : AppCompatActivity() {
         val main_activity = intent
         imc = main_activity.getFloatExtra("imc", 0.0f)
         val faixa = main_activity.getStringExtra("faixa")
+        val faixaPeso = main_activity.getStringExtra("faixaPeso")
 
         val resultado = getString(R.string.resultado_imc)
         textViewImc.text = "$resultado %.2f".format(imc)
         textViewFaixa.text = faixa
+        textViewFaixaPeso.text = faixaPeso
     }
 
    /* private fun mudarImagem() {
