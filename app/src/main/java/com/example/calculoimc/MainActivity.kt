@@ -70,6 +70,8 @@ class MainActivity : AppCompatActivity() {
             in 1.64..1.70 -> "52.3kg - 68.2kg"
             in 1.70..1.74 -> "54.5kg - 70.5kg"
             in 1.74..1.80 -> "56.8kg - 79.5kg"
+            in 1.80..1.84 -> "61.4kg - 81.8kg"
+            in 1.84..1.90 -> "63.6kg - 86.4kg"
             else -> "-"
         }
 
