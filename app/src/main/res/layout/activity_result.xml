@@ -10,13 +10,12 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/graph_imc_recycler"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="500dp"
         android:layout_marginTop="32dp"
         android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="64dp"
         tools:listitem="@layout/graph_item"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
@@ -62,5 +61,80 @@
         app:layout_constraintStart_toStartOf="@id/textViewFaixa"
         app:layout_constraintEnd_toEndOf="@id/textViewFaixa"
         tools:text="Faixa Peso Ideal"/>
+
+    <TextView
+        android:id="@+id/textView0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="40dp"
+        android:text="TextView"
+        android:textColor="#4F0E79"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/graph_imc_recycler"
+        app:layout_constraintTop_toTopOf="@+id/graph_imc_recycler" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="76dp"
+        android:text="TextView"
+        android:textColor="#4F0E79"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/graph_imc_recycler"
+        app:layout_constraintTop_toBottomOf="@id/textView0" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="84dp"
+        android:text="TextView"
+        android:textColor="#4F0E79"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/graph_imc_recycler"
+        app:layout_constraintTop_toBottomOf="@id/textView1" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="76dp"
+        android:text="TextView"
+        android:textColor="#4F0E79"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/graph_imc_recycler"
+        app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="80dp"
+        android:text="TextView"
+        android:textColor="#4F0E79"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/graph_imc_recycler"
+        app:layout_constraintTop_toBottomOf="@id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

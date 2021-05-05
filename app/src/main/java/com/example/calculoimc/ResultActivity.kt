@@ -2,9 +2,10 @@ package com.example.calculoimc
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
+import android.view.View.VISIBLE
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_result.*
+
 
 class ResultActivity : AppCompatActivity() {
 
@@ -25,7 +26,31 @@ class ResultActivity : AppCompatActivity() {
         val faixaPeso = main_activity.getStringExtra("faixaPeso")
 
         val resultado = getString(R.string.resultado_imc)
-        textViewImc.text = "$resultado %.2f".format(imc)
+
+
+        when{
+            imc <= 18.5 -> {
+                textView0.visibility = VISIBLE
+                textView0.text = "%.2f".format(imc)
+            }
+            imc in 18.6..24.9 -> {
+                textView1.visibility = VISIBLE
+                textView1.text = "%.2f".format(imc)
+            }
+            imc in 25.0..30.0 -> {
+                textView2.visibility = VISIBLE
+                textView2.text = "%.2f".format(imc)
+            }
+            imc in 30.1..39.9 -> {
+                textView3.visibility = VISIBLE
+                textView3.text = "%.2f".format(imc)
+            }
+            imc > 40.0 -> {
+                textView4.visibility = VISIBLE
+                textView4.text = "%.2f".format(imc)
+            }
+        }
+
         textViewFaixa.text = faixa
         textViewFaixaPeso.text = faixaPeso
     }
