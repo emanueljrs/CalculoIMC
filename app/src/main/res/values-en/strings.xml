@@ -6,12 +6,15 @@
     <string name="hint_editText_altura">Height(M) - Ex: 1.72</string>
     <string name="text_button_calcular">Calculate IMC</string>
     <string name="preencher_campos">Field cannot be empty or zero.</string>
-    <string name="muito_abaixo">Very underweight.</string>
-    <string name="abaixo">Under weight.</string>
-    <string name="normal">Normal weight.</string>
-    <string name="acima">Overweight.</string>
-    <string name="obesidade_1">Obesity 1.</string>
-    <string name="obesidade_2">Obesity 2 - Severe.</string>
-    <string name="obesidade_3">Obesity 3 - Morbid.</string>
-    <string name="resultado_imc">Your IMC is: </string>
+
+    <string name="abaixo">Under weight</string>
+    <string name="normal">Normal weight</string>
+    <string name="sobrepeso">Overweight</string>
+    <string name="obesidade">Obesity</string>
+    <string name="obesidade_morbida">Obesity Morbid</string>
+    <string name="resultado_imc">is your IMC</string>
+    <string name="faixa_peso_ideal">Your ideal weight range is:</string>
+
+    <string name="menor_que">Less than 18.5</string>
+    <string name="maior_que">Greater than 40</string>
 </resources>

@@ -54,7 +54,6 @@ class MainActivity : AppCompatActivity() {
             imc = peso / (altura * altura)
 
             faixaPesoIdeal = faixaPeso(altura)
-            Log.i("Teste", "Faxa Peso: $faixaPesoIdeal altura: $altura")
             verifcarIMC()
             chamarActivity()
         }
@@ -111,7 +110,6 @@ class MainActivity : AppCompatActivity() {
     private fun chamarActivity() {
         val result_activity = Intent(this, ResultActivity::class.java)
         result_activity.putExtra("imc", imc)
-        result_activity.putExtra("faixa", faixa)
         result_activity.putExtra("faixaPeso", faixaPesoIdeal)
         startActivity(result_activity)
     }
@@ -120,13 +118,11 @@ class MainActivity : AppCompatActivity() {
     private fun verifcarIMC() {
 
         val strFaixas = listOf(
-            getString(R.string.muito_abaixo),
             getString(R.string.abaixo),
             getString(R.string.normal),
-            getString(R.string.acima),
-            getString(R.string.obesidade_1),
-            getString(R.string.obesidade_2),
-            getString(R.string.obesidade_3))
+            getString(R.string.sobrepeso),
+            getString(R.string.obesidade),
+            getString(R.string.obesidade_morbida))
 
         if (imc <= 17) {
             faixa = strFaixas[0]

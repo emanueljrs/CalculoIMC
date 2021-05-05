@@ -22,55 +22,53 @@ class ResultActivity : AppCompatActivity() {
 
         val main_activity = intent
         imc = main_activity.getFloatExtra("imc", 0.0f)
-        val faixa = main_activity.getStringExtra("faixa")
         val faixaPeso = main_activity.getStringExtra("faixaPeso")
 
         val resultado = getString(R.string.resultado_imc)
 
-
         when{
             imc <= 18.5 -> {
                 textView0.visibility = VISIBLE
-                textView0.text = "%.2f".format(imc)
+                textView0.text = "%.2f $resultado".format(imc)
             }
             imc in 18.6..24.9 -> {
                 textView1.visibility = VISIBLE
-                textView1.text = "%.2f".format(imc)
+                textView1.text = "%.2f $resultado".format(imc)
             }
             imc in 25.0..30.0 -> {
                 textView2.visibility = VISIBLE
-                textView2.text = "%.2f".format(imc)
+                textView2.text = "%.2f $resultado".format(imc)
             }
             imc in 30.1..39.9 -> {
                 textView3.visibility = VISIBLE
-                textView3.text = "%.2f".format(imc)
+                textView3.text = "%.2f $resultado".format(imc)
             }
             imc > 40.0 -> {
                 textView4.visibility = VISIBLE
-                textView4.text = "%.2f".format(imc)
+                textView4.text = "%.2f $resultado".format(imc)
             }
         }
 
-        textViewFaixa.text = faixa
+        textViewFaixa.text = getString(R.string.faixa_peso_ideal)
         textViewFaixaPeso.text = faixaPeso
     }
 
     private fun graphs(): List<GraphImc> {
         return listOf(
-            GraphImc("Abaixo do Peso",
-            "Menor que 18.5",
+            GraphImc(getString(R.string.abaixo),
+            getString(R.string.menor_que),
             "#FFFBC02D"),
-            GraphImc("Peso saudável",
+            GraphImc(getString(R.string.normal),
                 "18.5 - 24.9",
                 "#FF11D80A"),
-            GraphImc("Sobrepeso",
+            GraphImc(getString(R.string.sobrepeso),
                 "25.0 - 30.0",
                 "#FFF57C00"),
-            GraphImc("Obeso",
+            GraphImc(getString(R.string.obesidade),
                 "30.1 - 39.9",
                 "#FFFB1818"),
-            GraphImc("Obeso Mórbido",
-                "Maior que 40",
+            GraphImc(getString(R.string.obesidade_morbida),
+                getString(R.string.maior_que),
                 "#FF990000"),
         )
     }
