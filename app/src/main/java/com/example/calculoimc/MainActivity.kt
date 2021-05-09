@@ -125,20 +125,16 @@ class MainActivity : AppCompatActivity() {
             getString(R.string.obesidade),
             getString(R.string.obesidade_morbida))
 
-        if (imc <= 17) {
+        if (imc <= 18.5) {
             faixa = strFaixas[0]
-        } else if (imc > 17 && imc <= 18.49) {
+        } else if (imc > 18.5 && imc <= 24.9) {
             faixa = strFaixas[1]
-        } else if (imc > 18.49 && imc <= 24.99) {
+        } else if (imc > 24.9 && imc <= 30.0) {
             faixa = strFaixas[2]
-        } else if (imc > 24.99 && imc <= 29.99) {
+        } else if (imc > 30.0 && imc <= 39.9) {
             faixa = strFaixas[3]
-        } else if (imc > 29.99 && imc <= 34.99) {
+        } else if (imc >= 40.0) {
             faixa = strFaixas[4]
-        } else if (imc > 34.99 && imc <= 39.99) {
-            faixa = strFaixas[5]
-        } else if (imc > 39.99) {
-            faixa = strFaixas[6]
         }
     }
 }

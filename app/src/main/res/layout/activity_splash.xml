@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@color/white"
+    tools:context=".SplashActivity">
+
+    <ImageView
+        android:id="@+id/img_balance"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        android:src="@drawable/balanca"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/text_tittle_splash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:text="@string/tittle_splash"
+        android:gravity="top|center"
+        android:textStyle="bold"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:layout_marginTop="64dp"/>
+
+    <TextView
+        android:id="@+id/text_description_splash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/description_splash"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

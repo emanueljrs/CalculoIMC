@@ -1,20 +1,22 @@
 <resources>
     <string name="app_name">Calculo IMC</string>
-    <string name="main_text_calculo_imc">Cálculo IMC</string>
+    <string name="main_text_calculo_imc">Insira seus dados:</string>
     <string name="hint_editText_peso">Peso(KG) - Ex: 65.2</string>
     <string name="hint_editText_altura">Altura(M) - Ex: 1.72</string>
-    <string name="text_button_calcular">Calcular IMC</string>
+    <string name="text_button_calcular">Calcular</string>
     <string name="preencher_campos">Não pode ser vazio e nem zero.</string>
 
-    <string name="abaixo">Abaixo do peso.</string>
-    <string name="normal">Peso normal.</string>
-    <string name="sobrepeso">Sobrepeso.</string>
-    <string name="obesidade">Obesidade.</string>
-    <string name="obesidade_morbida">Obesidade Mórbida.</string>
+    <string name="abaixo">Abaixo do peso</string>
+    <string name="normal">Peso normal</string>
+    <string name="sobrepeso">Sobrepeso</string>
+    <string name="obesidade">Obesidade</string>
+    <string name="obesidade_morbida">Obesidade \nMórbida</string>
     <string name="resultado_imc">é seu IMC</string>
     <string name="faixa_peso_ideal">Sua faixa de peso ideal é:</string>
 
     <string name="menor_que">Menor que 18.5</string>
     <string name="maior_que">Maior que 40</string>
+    <string name="tittle_splash">Calculadora IMC</string>
+    <string name="description_splash">Desenvolvido por Emanuel Rodrigues.</string>
 
 </resources>
