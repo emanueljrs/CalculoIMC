@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //Retorna a faixa de peso de acordo com a altura
     private fun faixaPeso(altura: Float): String {
 
         return when(altura) {
@@ -115,7 +116,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(result_activity)
     }
 
-    //Verifica qual faixa o IMC calculado se encontra
+    //Verifica qual faixa o IMC se encontra
     private fun verifcarIMC() {
 
         val strFaixas = listOf(
@@ -123,7 +124,8 @@ class MainActivity : AppCompatActivity() {
             getString(R.string.normal),
             getString(R.string.sobrepeso),
             getString(R.string.obesidade),
-            getString(R.string.obesidade_morbida))
+            getString(R.string.obesidade_morbida)
+        )
 
         if (imc <= 18.5) {
             faixa = strFaixas[0]

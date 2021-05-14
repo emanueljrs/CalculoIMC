@@ -15,17 +15,20 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
+        //Inicializa o RecyclerView que mostra o gráfico
         val recycler = graph_imc_recycler
         recycler.adapter = GraphImcListAdapter(graphs(), this)
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recycler.layoutManager = layoutManager
 
+        //Pega os valores passados pela activity que a chamou
         val main_activity = intent
         imc = main_activity.getFloatExtra("imc", 0.0f)
         val faixaPeso = main_activity.getStringExtra("faixaPeso")
 
         val resultado = getString(R.string.resultado_imc)
 
+        //Habilita o TextView de acordo com o valor do IMC
         when{
             imc <= 18.5 -> {
                 textView0.visibility = VISIBLE
@@ -53,6 +56,7 @@ class ResultActivity : AppCompatActivity() {
         textViewFaixaPeso.text = faixaPeso
     }
 
+    //Função para preencher o RecyclerView
     private fun graphs(): List<GraphImc> {
         return listOf(
             GraphImc(getString(R.string.abaixo),
@@ -72,14 +76,4 @@ class ResultActivity : AppCompatActivity() {
                 "#FF990000"),
         )
     }
-
-    /* private fun mudarImagem() {
-         if (imc <= 18.49) {
-             imgTable.setImageResource(R.drawable.advertencia)
-         } else if (imc > 18.49 && imc <= 24.99) {
-             imgTable.setImageResource(R.drawable.normal)
-         } else if (imc > 24.99) {
-             imgTable.setImageResource(R.drawable.alerta)
-         }
-     }*/
 }
